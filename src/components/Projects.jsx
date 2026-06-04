@@ -26,6 +26,18 @@ const TECH = {
   bimg1: ['Python', 'HTML', 'Tailwind CSS'],
 }
 
+const LANGUAGES = {
+  '128barcode-generator': 'HTML',
+  ElCare: 'Python',
+  bimg1: 'Python',
+}
+
+const STARS = {
+  '128barcode-generator': 13,
+  ElCare: 1,
+  bimg1: 1,
+}
+
 const AWARDS = {
   ElCare: "Won Hackers' Choice Award 2026",
   bimg1: 'Global Nominee at NASA Space Apps Challenge 2025',
@@ -40,11 +52,8 @@ export default function Projects() {
       const cached = localStorage.getItem(CACHE_KEY)
       if (cached) {
         try {
-          const { data, time } = JSON.parse(cached)
-          if (Date.now() - time < CACHE_TTL) {
-            if (!cancelled) setRepos(data)
-            return
-          }
+          const { data } = JSON.parse(cached)
+          if (!cancelled) setRepos(data)
         } catch {}
       }
 
@@ -81,8 +90,8 @@ export default function Projects() {
             const entry = repos ? repos.find(r => r.name === name) : null
             const d = entry?.data
             const desc = d?.description || FALLBACKS[name]?.description || ''
-            const stars = d?.stargazers_count ?? 0
-            const lang = d?.language || ''
+            const stars = d ? (d.stargazers_count || STARS[name] || 0) : (STARS[name] || 0)
+            const lang = d ? (d.language || LANGUAGES[name] || '') : (LANGUAGES[name] || '')
             const ghUrl = d?.html_url || `https://github.com/yafisyasar/${name}`
             const liveUrl = FALLBACKS[name]?.homepage || ''
             const award = AWARDS[name] || ''

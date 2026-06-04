@@ -22,11 +22,8 @@ export default function GitHub() {
       const cached = localStorage.getItem(CACHE_KEY)
       if (cached) {
         try {
-          const { data, time } = JSON.parse(cached)
-          if (Date.now() - time < CACHE_TTL) {
-            if (!cancelled) setLangs(data)
-            return
-          }
+          const { data } = JSON.parse(cached)
+          if (!cancelled) setLangs(data)
         } catch {}
       }
 
@@ -55,7 +52,7 @@ export default function GitHub() {
           } catch {}
         }
       } catch {
-        if (!cancelled) {
+        if (!cancelled && !cached) {
           setError(true)
           setLangs(FALLBACK)
         }
