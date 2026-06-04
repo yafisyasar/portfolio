@@ -8,7 +8,7 @@ export default function Hero({ loaded }) {
         <h1 className="hero-name">
           <ScrambleText text="Yafis Yasar A" start={loaded} />
         </h1>
-        <h2 className="hero-tagline">BCA Student {'&'} UI/UX Enthusiast</h2>
+        <h2 className="hero-tagline">BCA Student {'&'} Developer</h2>
         <p className="hero-desc">
           BCA student at Amrita Vishwa Vidyapeetham specializing in UI/UX design,
           web development, AI, cybersecurity, and IoT. Passionate about creating

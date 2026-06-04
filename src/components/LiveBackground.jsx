@@ -21,11 +21,15 @@ export default function LiveBackground() {
     let targets = Array.from({ length: BLOB_COUNT }, () => ({ x: 0.5, y: 0.5 }))
     let rafId
 
-    function onMouse(e) {
-      mouse.x = e.clientX / window.innerWidth
-      mouse.y = e.clientY / window.innerHeight
+    function onMove(e) {
+      const cx = e.touches ? e.touches[0].clientX : e.clientX
+      const cy = e.touches ? e.touches[0].clientY : e.clientY
+      mouse.x = cx / window.innerWidth
+      mouse.y = cy / window.innerHeight
     }
-    window.addEventListener('mousemove', onMouse, { passive: true })
+    window.addEventListener('mousemove', onMove, { passive: true })
+    window.addEventListener('touchmove', onMove, { passive: true })
+    window.addEventListener('touchstart', onMove, { passive: true })
 
     function animate() {
       for (let i = 0; i < blobs.length; i++) {
@@ -51,7 +55,9 @@ export default function LiveBackground() {
 
     return () => {
       cancelAnimationFrame(rafId)
-      window.removeEventListener('mousemove', onMouse)
+      window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('touchmove', onMove)
+      window.removeEventListener('touchstart', onMove)
     }
   }, [])
 
