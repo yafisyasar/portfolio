@@ -37,7 +37,7 @@
 }
 
 .loading-cursor {
-  animation: blink 1s step-end infinite;
+  animation: blink 1s steps(1) infinite;
 }
 
 .loading-bar-track {
@@ -69,15 +69,6 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-}
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  will-change: transform;
-  transition: none;
-  opacity: 0.5;
 }
 
 .grid-base {
@@ -145,10 +136,11 @@
 .nav-logo .cursor::after {
   content: '_';
   color: var(--accent);
-  animation: blink 1s step-end infinite;
+  animation: blink 1s steps(1) infinite;
 }
 
 @keyframes blink {
+  0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
 
@@ -617,7 +609,6 @@
 .footer {
   position: relative;
   z-index: 1;
-  border-top: 1px solid var(--border);
   padding: 24px 32px;
   text-align: center;
 }

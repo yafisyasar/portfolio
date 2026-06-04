@@ -4,7 +4,6 @@ const bootLines = [
   { text: '> Initializing terminal...', delay: 200 },
   { text: '> Loading portfolio modules...', delay: 600 },
   { text: '> Establishing connection...', delay: 1000 },
-  { text: '> System ready.', delay: 1400 },
 ]
 
 export default function LoadingScreen({ onFinish }) {
@@ -28,16 +27,18 @@ export default function LoadingScreen({ onFinish }) {
         }
         return p + 1
       })
-    }, 25)
+    }, 14)
     return () => clearInterval(interval)
   }, [])
 
+  const ready = progress >= 70
+
   useEffect(() => {
-    if (progress >= 100 && visibleLines >= bootLines.length) {
+    if (progress >= 100 && ready) {
       const timer = setTimeout(() => setFading(true), 400)
       return () => clearTimeout(timer)
     }
-  }, [progress, visibleLines])
+  }, [progress, ready])
 
   useEffect(() => {
     if (fading) {
@@ -55,7 +56,10 @@ export default function LoadingScreen({ onFinish }) {
               {line.text}
             </p>
           ))}
-          {visibleLines >= bootLines.length && (
+          {ready && (
+            <p className="loading-line">{'>'} System ready.</p>
+          )}
+          {ready && (
             <p className="loading-line cursor-line">
               {'> '}<span className="loading-cursor">_</span>
             </p>
