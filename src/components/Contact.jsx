@@ -3,7 +3,7 @@ export default function Contact() {
     <section id="contact" className="section">
       <div className="section-inner">
         <h2 className="section-title">
-          <span className="section-number">04.</span> Contact
+          <span className="section-number">05.</span> Contact
         </h2>
         <div className="contact-content">
           <p className="contact-text">
