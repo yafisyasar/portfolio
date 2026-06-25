@@ -1,5 +1,14 @@
 const experiences = [
   {
+    role: 'Full Stack Developer Intern',
+    company: 'Minus Bugs Pvt Ltd',
+    period: 'May 26 - Jun 2026',
+    points: [
+      'Developed and deployed Elite Store — a full-stack Indian grocery e-commerce platform using React, Next.js, and PostgreSQL',
+      'Worked on the live production system serving customers in New Zealand',
+    ],
+  },
+  {
     role: 'UI/UX Intern',
     company: 'Cognifyz Technologies',
     period: '2025',

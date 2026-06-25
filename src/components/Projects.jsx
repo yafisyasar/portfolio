@@ -5,6 +5,16 @@ const CACHE_TTL = 3600000
 
 const REPOS = ['ElCare', 'bimg1', '128barcode-generator']
 
+const STATIC_PROJECTS = [
+  {
+    title: 'Elite Store',
+    desc: 'Indian grocery e-commerce platform built for the New Zealand market.',
+    tech: ['React', 'Next.js', 'PostgreSQL'],
+    award: 'Live project for internship at Minus Bugs Pvt Ltd (May 26 - Jun 26)',
+    url: 'https://elitestore.vibraverseltd.com/',
+  },
+]
+
 const FALLBACKS = {
   '128barcode-generator': {
     description: 'Generates 128 format barcodes',
@@ -86,6 +96,24 @@ export default function Projects() {
           <span className="section-number">01.</span> Projects
         </h2>
         <div className="projects-grid">
+          {STATIC_PROJECTS.map(p => (
+            <div key={p.title} className="project-card">
+              <div className="project-folder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div className="project-links">
+                <a href={p.url} target="_blank" rel="noopener noreferrer" aria-label="External link">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+              <h3 className="project-title">{p.title}</h3>
+              <p className="project-desc">{p.desc}</p>
+              {p.award && <p className="project-award">{p.award}</p>}
+              <ul className="project-tech">
+                {p.tech.map(t => <li key={t}>{t}</li>)}
+              </ul>
+            </div>
+          ))}
           {REPOS.map((name, i) => {
             const entry = repos ? repos.find(r => r.name === name) : null
             const d = entry?.data

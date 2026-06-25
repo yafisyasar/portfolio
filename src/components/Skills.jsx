@@ -5,7 +5,7 @@ const categories = [
   },
   {
     label: 'Frameworks',
-    skills: ['Django', 'React.js', 'Tailwind CSS', 'Bootstrap', 'Node.js'],
+    skills: ['Django', 'React.js', 'Next.js', 'Tailwind CSS', 'Bootstrap', 'Node.js'],
   },
   {
     label: 'Web Technologies',
@@ -17,7 +17,7 @@ const categories = [
   },
   {
     label: 'Databases',
-    skills: ['MySQL', 'SQLite'],
+    skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQLite'],
   },
   {
     label: 'Core CS',
