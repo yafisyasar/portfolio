@@ -49,7 +49,7 @@ export default function Experience() {
     <section id="experience" className="section">
       <div className="section-inner">
         <h2 className="section-title">
-          <span className="section-number">04.</span> Experience
+          <span className="section-number">05.</span> Experience
         </h2>
         <div className="experience-list">
           {experiences.map((exp, i) => (

@@ -3,7 +3,7 @@ export default function Contact() {
     <section id="contact" className="section">
       <div className="section-inner">
         <h2 className="section-title">
-          <span className="section-number">05.</span> Contact
+          <span className="section-number">06.</span> Contact
         </h2>
         <div className="contact-content">
           <p className="contact-text">
@@ -18,6 +18,8 @@ export default function Contact() {
             <a href="https://github.com/yafisyasar" target="_blank" rel="noopener noreferrer">GitHub</a>
             <span className="contact-sep">/</span>
             <a href="https://linkedin.com/in/yafisyasar" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <span className="contact-sep">/</span>
+            <a href="/resume.pdf" target="_blank">Resume</a>
             <span className="contact-sep">/</span>
             <a href="mailto:yasaryafis@gmail.com">Email</a>
           </div>

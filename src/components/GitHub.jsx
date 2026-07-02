@@ -66,7 +66,7 @@ export default function GitHub() {
     <section id="github" className="section">
       <div className="section-inner">
         <h2 className="section-title">
-          <span className="section-number">03.</span> Languages
+          <span className="section-number">04.</span> Languages
         </h2>
         <div className="lang-bars">
           {langs ? (
