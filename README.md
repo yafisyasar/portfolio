@@ -1,5 +1,5 @@
 # portfolio
-### live at https://yafisyasar.vercel.app/
+
 Personal developer portfolio for **Yafis Yasar A** — built with React + Vite.
 
 ## Stack
@@ -14,6 +14,8 @@ Personal developer portfolio for **Yafis Yasar A** — built with React + Vite.
 - Grid background with mouse-following glow
 - Boot-sequence loading screen with progress bar
 - Word-by-word text scramble effect on logo and name
+- GitHub integration — live language stats & project data
+- Certificate viewer with modal PDF preview
 - Fully responsive
 
 ## Sections
@@ -21,8 +23,10 @@ Personal developer portfolio for **Yafis Yasar A** — built with React + Vite.
 - Hero
 - Projects
 - Skills
+- Certifications (5 certs with inline PDF viewer)
+- Languages (fetched from GitHub API)
 - Experience
-- Contact
+- Contact (includes Resume download link)
 
 ## Development
 
@@ -37,3 +41,12 @@ npm run dev
 npm run build
 npm run preview
 ```
+
+## Deploy to GitHub Pages
+
+```bash
+npm run deploy
+```
+
+Site will be available at `https://yafisyasar.github.io/portfolio/`.  
+Go to repo **Settings → Pages** and set the source to the `gh-pages` branch.
