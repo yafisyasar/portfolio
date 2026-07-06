@@ -221,7 +221,7 @@
 }
 
 .hero-greeting {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
   margin-bottom: 16px;
 }
@@ -248,9 +248,19 @@
   margin-bottom: 20px;
 }
 
-.hero-tagline::before {
-  content: '# ';
+.typewriter-cursor {
   color: var(--text-muted);
+  animation: typewriter-blink 1s step-end infinite;
+}
+
+.typewriter-cursor.hidden {
+  opacity: 0;
+  animation: none;
+}
+
+@keyframes typewriter-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .hero-desc {

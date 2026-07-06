@@ -1,4 +1,5 @@
 import ScrambleText from './ScrambleText'
+import TypeWriter from './TypeWriter'
 
 export default function Hero({ loaded }) {
   return (
@@ -8,15 +9,20 @@ export default function Hero({ loaded }) {
         <h1 className="hero-name">
           <ScrambleText text="Yafis Yasar A" start={loaded} />
         </h1>
-        <h2 className="hero-tagline">BCA Student {'&'} Developer</h2>
+        <h2 className="hero-tagline">
+          <TypeWriter />
+        </h2>
         <p className="hero-desc">
           BCA student at Amrita Vishwa Vidyapeetham specializing in UI/UX design,
           web development, AI, cybersecurity, and IoT. Passionate about creating
           innovative software and hardware solutions.
         </p>
         <div className="hero-actions">
-          <a href="#projects" className="btn btn-primary">
+          <a href="#projects" className="btn btn-outline">
             View My Work
+          </a>
+          <a href="/resume.pdf" target="_blank" className="btn btn-primary">
+            Download CV
           </a>
           <a href="#contact" className="btn btn-outline">
             Get In Touch

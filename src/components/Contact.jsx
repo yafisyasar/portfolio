@@ -11,15 +11,13 @@ export default function Contact() {
             to interesting conversations. Whether you have a project idea,
             a question, or just want to say hi — feel free to reach out!
           </p>
-          <a href="mailto:yasaryafis@gmail.com" className="btn btn-primary contact-btn">
+          <a href="https://linktr.ee/yafis_yasar" target="_blank" rel="noopener noreferrer" className="btn btn-primary contact-btn">
             Say Hello
           </a>
           <div className="contact-links">
             <a href="https://github.com/yafisyasar" target="_blank" rel="noopener noreferrer">GitHub</a>
             <span className="contact-sep">/</span>
             <a href="https://linkedin.com/in/yafisyasar" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <span className="contact-sep">/</span>
-            <a href="/resume.pdf" target="_blank">Resume</a>
             <span className="contact-sep">/</span>
             <a href="mailto:yasaryafis@gmail.com">Email</a>
           </div>
