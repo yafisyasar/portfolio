@@ -43,7 +43,7 @@ const LANGUAGES = {
 }
 
 const STARS = {
-  '128barcode-generator': 13,
+  '128barcode-generator': 19,
   ElCare: 1,
   bimg1: 1,
 }
@@ -118,7 +118,7 @@ export default function Projects() {
             const entry = repos ? repos.find(r => r.name === name) : null
             const d = entry?.data
             const desc = d?.description || FALLBACKS[name]?.description || ''
-            const stars = d ? (d.stargazers_count || STARS[name] || 0) : (STARS[name] || 0)
+            const stars = d ? (d.stargazers_count ?? STARS[name] ?? 0) : (STARS[name] ?? 0)
             const lang = d ? (d.language || LANGUAGES[name] || '') : (LANGUAGES[name] || '')
             const ghUrl = d?.html_url || `https://github.com/yafisyasar/${name}`
             const liveUrl = FALLBACKS[name]?.homepage || ''
